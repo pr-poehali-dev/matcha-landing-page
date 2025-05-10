@@ -1,5 +1,4 @@
 
-import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 
 const features = [
@@ -25,18 +24,6 @@ const features = [
   }
 ];
 
-const featureAnimation = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: 0.1 * i,
-      duration: 0.5
-    }
-  })
-};
-
 const Features = () => {
   return (
     <section className="py-20">
@@ -53,14 +40,10 @@ const Features = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              custom={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: "-50px" }}
-              variants={featureAnimation}
-              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in"
+              style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-start">
                 <div className="flex-shrink-0">
@@ -73,7 +56,7 @@ const Features = () => {
                   <p className="text-gray-600">{feature.description}</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 

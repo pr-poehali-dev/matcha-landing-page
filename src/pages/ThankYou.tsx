@@ -1,5 +1,4 @@
 
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, CheckCircle2 } from "lucide-react";
@@ -8,11 +7,8 @@ const ThankYou = () => {
   return (
     <div className="min-h-screen bg-[#F9F7F2] flex flex-col">
       <div className="container mx-auto px-4 py-12 flex-grow flex flex-col items-center justify-center">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl w-full text-center"
+        <div
+          className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl w-full text-center animate-fade-in"
         >
           <div className="flex justify-center mb-6">
             <div className="w-20 h-20 rounded-full bg-[#8FB98D]/20 flex items-center justify-center">
@@ -62,7 +58,7 @@ const ThankYou = () => {
               </a>
             </Button>
           </div>
-        </motion.div>
+        </div>
       </div>
 
       <div className="bg-white py-8 w-full">

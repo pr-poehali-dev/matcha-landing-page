@@ -1,6 +1,5 @@
 
 import { Button } from "@/components/ui/button";
-import { motion } from "framer-motion";
 
 interface HeroProps {
   onOrderNow: () => void;
@@ -16,11 +15,8 @@ const Hero = ({ onOrderNow }: HeroProps) => {
       </div>
       
       {/* Main content */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        className="max-w-4xl mx-auto px-4"
+      <div
+        className="max-w-4xl mx-auto px-4 animate-fade-in"
       >
         <div className="mb-6 flex items-center justify-center">
           <div className="h-0.5 w-8 bg-[#226D4A]"></div>
@@ -52,21 +48,18 @@ const Hero = ({ onOrderNow }: HeroProps) => {
             Узнать больше
           </Button>
         </div>
-      </motion.div>
+      </div>
       
       {/* Product image */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.8, delay: 0.3 }}
-        className="mt-16"
+      <div
+        className="mt-16 animate-fade-in"
       >
         <img 
           src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
           alt="Matcha Suri" 
           className="w-full max-w-2xl h-auto rounded-lg shadow-2xl mx-auto object-cover" 
         />
-      </motion.div>
+      </div>
     </div>
   );
 };
