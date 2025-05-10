@@ -3,7 +3,6 @@ import { useState } from "react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { motion } from "framer-motion";
 
 import {
   Form,
@@ -55,11 +54,8 @@ const OrderForm = ({ onSuccess }: OrderFormProps) => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
-      className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto"
+    <div
+      className="bg-white rounded-2xl shadow-xl p-8 max-w-2xl mx-auto animate-fade-in"
     >
       <h2 className="text-3xl font-playfair font-bold text-[#226D4A] mb-8 text-center">
         Заказать Matcha Suri
@@ -190,7 +186,7 @@ const OrderForm = ({ onSuccess }: OrderFormProps) => {
           </div>
         </form>
       </Form>
-    </motion.div>
+    </div>
   );
 };
 
